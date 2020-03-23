@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-"""Learning classes."""
+"""Learn classes."""
 
 class Animal:
     def __init__(self, name, breed, color, age):

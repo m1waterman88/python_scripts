@@ -1,5 +1,6 @@
-"""Learning classes."""
+#!/usr/bin/env python3
 
+"""Learn classes."""
 
 class Person():
     """Create empty class for person."""
