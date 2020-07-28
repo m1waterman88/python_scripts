@@ -4,7 +4,7 @@ print(primes[4])  # prints the value to the key "4", which is 7
 print(primes[primes[4]])  # thus, primes[primes[4]] is primes[7], which is 17
 
 
-# <key> in/not <dict>  -->  returns boolean value
+# <key> in/not <dict>  ->  returns boolean value
 print(1 in primes)  # True
 print(1 not in primes)  # False
 print(3 in primes)  # False
@@ -57,10 +57,10 @@ for v in enumerate(nums):
     print(v)
 
 
-# funtion to count characters in text
-def count_char(text, char):
+def count_char(text: str, char: str) -> int:
+    """Count chars in text."""
     count = 0
-    for c in text:
+    for c in text.casefold():
         if c == char:
             count += 1
     return count

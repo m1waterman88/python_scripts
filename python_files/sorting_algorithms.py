@@ -1,4 +1,8 @@
-# https://medium.com/@george.seif94/a-tour-of-the-top-5-sorting-algorithms-with-python-code-43ea9aa02889
+#!/usr/bin/env python3
+
+"""
+https://medium.com/@george.seif94/a-tour-of-the-top-5-sorting-algorithms-with-python-code-43ea9aa02889
+"""
 
 import random
 random.__file__
@@ -6,7 +10,7 @@ random.__file__
 print(random.__file__)
 
 
-def bubble_sort(arr):
+def bubble_sort(arr: list[int]) -> list[int]:
     """Sort arr with bubble sort."""
     def swap(i, j):
         arr[i], arr[j] = arr[j], arr[i]
@@ -28,17 +32,13 @@ def bubble_sort(arr):
 
 '''
 arr = random.sample(range(1, 200), 100)
-print("\n" "Before bubble sort:"
-      "\n" + "-"*50 + "\n",
-      arr)
+print("", "Before bubble sort:", "-"*50, arr, sep="\n")
 bubble_sort(arr)
-print("\n"*2 + "After bubble sort:"
-      "\n" + "-"*50 + "\n",
-      arr)
+print("","", "After bubble sort:", "-"*50, arr, sep="\n")
 '''
 
 
-def selection_sort(arr):
+def selection_sort(arr: list[int]) -> list[int]:
     """Sort arr with selection sort."""
     for i in range(len(arr)):
         minimum = i
@@ -56,17 +56,13 @@ def selection_sort(arr):
 
 '''
 arr = random.sample(range(1, 200), 100)
-print("\n" "Before selection sort:"
-      "\n" + "-"*50 + "\n",
-      arr)
-selection_sort(arr)
-print("\n"*2 + "After selection sort:"
-      "\n" + "-"*50 + "\n",
-      arr)
+print("", "Before selection sort:", "-"*50, arr, sep="\n")
+bubble_sort(arr)
+print("","", "After selection sort:", "-"*50, arr, sep="\n")
 '''
 
 
-def insertion_sort(arr):
+def insertion_sort(arr: list[int]) -> list[int]:
     """Sort arr with insertion sort."""
     for i in range(len(arr)):
         cursor = arr[i]
@@ -84,17 +80,13 @@ def insertion_sort(arr):
 
 '''
 arr = random.sample(range(1, 200), 100)
-print("\n" "Before insertion sort:"
-      "\n" + "-"*50 + "\n",
-      arr)
-insertion_sort(arr)
-print("\n"*2 + "After instertion sort:"
-      "\n" + "-"*50 + "\n",
-      arr)
+print("", "Before insertion sort:", "-"*50, arr, sep="\n")
+bubble_sort(arr)
+print("","", "After insertion sort:", "-"*50, arr, sep="\n")
 '''
 
 
-def merge_sort(arr):
+def merge_sort(arr: list[int]) -> list[int]:
     """Sort arr with merge sort."""
     # print("Splitting ", arr)
 
@@ -132,26 +124,18 @@ def merge_sort(arr):
 
 
 '''
-arr = random.sample(range(0, 999), 100)
-print("\n" "Before merge sort:"
-      "\n" + "-"*50 + "\n",
-      arr)
-merge_sort(arr)
-print("\n"*2 + "After merge sort:"
-      "\n" + "-"*50 + "\n",
-      arr)
+arr = random.sample(range(1, 200), 100)
+print("", "Before merge sort:", "-"*50, arr, sep="\n")
+bubble_sort(arr)
+print("","", "After merge sort:", "-"*50, arr, sep="\n")
 '''
 
 # quick sort
 
 
 '''
-arr = random.sample(range(0, 999), 100)
-print("\n" "Before quick sort:"
-      "\n" + "-"*50 + "\n",
-      arr)
-quick_sort(arr)
-print("\n"*2 + "After quick sort:"
-      "\n" + "-"*50 + "\n",
-      arr)
+arr = random.sample(range(1, 200), 100)
+print("", "Before quick sort:", "-"*50, arr, sep="\n")
+bubble_sort(arr)
+print("","", "After quick sort:", "-"*50, arr, sep="\n")
 '''

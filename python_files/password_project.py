@@ -9,11 +9,12 @@ while attempt_count < 5:
     if attempt == password:
         print("Welcome, " + name + "!")
         break
-    elif (attempt != password) and (attempt_count < 5):
+    else:
         print("The username and password combination is not recognized")
         attempt_count += 1
         attempt = input("Re-enter Password: ")
-if (attempt != password) and (attempt_count >= 5):
+
+if attempt != password and attempt_count >= 5:
     print("Your account has been locked. Please contact your system administrator.")
 
 
@@ -34,10 +35,11 @@ while attempt_count < 5:
     if attempt == password:
         print("Welcome, " + name + "!")
         break
-    elif (attempt != password) and (attempt_count < 5):
+    else:
         print("The username and password combination is not recognized")
         attempt_count += 1
         attempt = input("Re-enter Password: ")
-if (attempt != password) and (attempt_count >= 5):
+
+if attempt != password and attempt_count >= 5:
     print("Your account has been locked. Please contact your system administrator.")
 """

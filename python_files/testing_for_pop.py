@@ -7,8 +7,7 @@ import platform
 
 def double(n):
     """Double the input, n."""
-    dub = n * 2
-    return dub
+    return n * 2
 
 
 ver = platform.python_version()

@@ -3,14 +3,16 @@
 """
 Learn static methods.
 
-Static methods are similar to class methods, except 
-they don't receive any additional arguments; they are 
-identical to normal functions that belong to a class. 
+Static methods are similar to class methods, except
+they don't receive any additional arguments; they are
+identical to normal functions that belong to a class.
 
 Mark with decorator: @staticmethod.
 """
 
+
 class Pizza:
+
     def __init__(self, toppings):
         self.toppings = toppings
 
@@ -28,4 +30,3 @@ if all(Pizza.validate_topping(i) for i in ingredients):
     print(pizza.toppings)
 else:
     print("No!")
-

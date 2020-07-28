@@ -2,29 +2,60 @@
 
 month = str(input("Enter month: ")).casefold()
 monthConversions = {
-    "January".casefold(): "January", "Jan".casefold(): "January",
-    "1": "January", "01": "January",
-    "February".casefold(): "February", "Feb".casefold(): "February",
-    "2": "February", "02": "February",
-    "March".casefold(): "March", "Mar".casefold(): "March",
-    "3": "March", "03": "March",
-    "April".casefold(): "April", "Apr".casefold(): "April",
-    "4": "April", "04": "April",
+    "January".casefold(): "January",
+    "Jan".casefold(): "January",
+    "1": "January",
+    "01": "January",
+
+    "February".casefold(): "February",
+    "Feb".casefold(): "February",
+    "2": "February",
+    "02": "February",
+
+    "March".casefold(): "March",
+    "Mar".casefold(): "March",
+    "3": "March",
+    "03": "March",
+
+    "April".casefold(): "April",
+    "Apr".casefold(): "April",
+    "4": "April",
+    "04": "April",
+
     "May".casefold(): "May",
-    "5": "May", "05": "May",
-    "June".casefold(): "June", "Jun".casefold(): "June",
-    "6": "June", "06": "June",
-    "July".casefold(): "July", "Jul".casefold(): "July",
-    "7": "July", "07": "July",
-    "August".casefold(): "August", "Aug".casefold(): "August",
-    "8": "August", "08": "August",
-    "September".casefold(): "September", "Sep".casefold(): "September",
-    "9": "September", "09": "September",
-    "October".casefold(): "October", "Oct".casefold(): "October",
+    "5": "May",
+    "05": "May",
+
+    "June".casefold(): "June",
+    "Jun".casefold(): "June",
+    "6": "June",
+    "06": "June",
+
+    "July".casefold(): "July",
+    "Jul".casefold(): "July",
+    "7": "July",
+    "07": "July",
+
+    "August".casefold(): "August",
+    "Aug".casefold(): "August",
+    "8": "August",
+    "08": "August",
+
+    "September".casefold(): "September",
+    "Sep".casefold(): "September",
+    "9": "September",
+    "09": "September",
+
+    "October".casefold(): "October",
+    "Oct".casefold(): "October",
     "10": "October",
-    "November".casefold(): "November", "Nov".casefold(): "November",
+
+    "November".casefold(): "November",
+    "Nov".casefold(): "November",
     "11": "November",
-    "December".casefold(): "December", "Dec".casefold(): "December",
+
+    "December".casefold(): "December",
+    "Dec".casefold(): "December",
     "12": "December",
 }
 
@@ -57,7 +88,7 @@ yearConversions = {
 }
 
 
-print("\n" + "Today is: " + "\n"
-      + monthConversions.get(month, "--Invalid month--")
-      + " " + dayConversions.get(day, "--Invalid day--")
-      + ", " + yearConversions.get(year, "--Invalid year--"))
+print("", "Today is: ", sep="\n")
+print(f"{monthConversions.get(month, '--Invalid month--')} "
+      f"{dayConversions.get(day, '--Invalid day--')}, "
+      f"{yearConversions.get(year, '--Invalid year--')}")

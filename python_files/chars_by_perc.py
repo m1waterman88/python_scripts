@@ -1,3 +1,14 @@
+#!/usr/bin/env python3
+
+"""Return number of chars in given text."""
+
+import string
+
+alpha = string.ascii_lowercase
+nums = string.digits
+any_char = string.printable
+spec_chars = string.whitespace + string.punctuation
+
 text = """Ornhgvshy vf orggre guna htyl.
 Rkcyvpvg vf orggre guna vzcyvpvg.
 Fvzcyr vf orggre guna pbzcyvpngrq.
@@ -18,31 +29,39 @@ Vs gur vzcyrzragngvba vf rnfl gb rkcynva, vg znl or n tbbq vqrn.
 Anzrfcnprf ner bar ubaxvat terng vqrn -- yrg'f qb zber bs gubfr!"""
 
 
-def count_char(text, char):
+def count_char(text: str, char: str) -> int:
+    """Count chars in text."""
     count = 0
-    for c in text:
+    for c in text.casefold():
         if c == char:
             count += 1
     return count
 
 
-print("\n")
 let_perc = 0
-for char in 'abcdefghijklmnopqrstuvwxyz':
-    perc = 100 * count_char(text.casefold(), char) / len(text)
-    let_perc += perc
-    print(f"{char.upper()} - {round(perc, 2)}%")
-
+num_perc = 0
 spec_perc = 0
-for char in ". \n\r\t\"!?@$%^&#+-='*:;,_~`/|()[]{}<>":
+
+
+for char in any_char:
     perc = 100 * count_char(text, char) / len(text)
-    spec_perc += perc
 
-sum = let_perc + spec_perc
-assert sum == 100, "sum != 100"  # DON'T use parentheses with asserts
+    if char in alpha:
+        let_perc += perc
+        print(f"{char.upper()} - {round(perc, 2)}%")
+    elif char in nums:
+        num_perc += perc
+    elif char in spec_chars:
+        spec_perc += perc
 
-print("\n"
-      f"letters: {round(let_perc, 2)}%\n"
-      f"special chars: {round(spec_perc, 2)}%\n"
-      f"total: {sum}%"
-      "\n")
+tot_perc = let_perc + num_perc + spec_perc
+# DON'T use parentheses with asserts
+assert tot_perc == 100, f"total percentage must equal 100\npercentage is {sum}"
+
+print("",
+      f"letters: {round(let_perc, 2)}%",
+      f"numbers: {round(num_perc, 2)}%",
+      f"special chars: {round(spec_perc, 2)}%",
+      f"total: {tot_perc}%",
+      "",
+      sep="\n")

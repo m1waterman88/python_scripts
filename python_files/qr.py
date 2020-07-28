@@ -4,7 +4,6 @@
 
 import qrcode
 
-url = # whatever url
+url = "https://www.mikewaterman.com/"
 image = qrcode.make(url)
 image.save("qr.png", "PNG")
-

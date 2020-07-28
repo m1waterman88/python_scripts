@@ -7,6 +7,7 @@ Denoted with a decorator: @classmethod.
 """
 
 class Rectangle:
+
     def __init__(self, width, height):
         self.width = width
         self.height = height
@@ -18,7 +19,7 @@ class Rectangle:
     def new_square(cls, side_length):
         """
         new_square is a class method and is called on the class,
-        rather than on an instance of the class. It returns a new 
+        rather than on an instance of the class. It returns a new
         object of the class cls.
         """
         return cls(side_length, side_length)
@@ -26,4 +27,3 @@ class Rectangle:
 
 square = Rectangle.new_square(5)
 print(square.calculate_area())
-

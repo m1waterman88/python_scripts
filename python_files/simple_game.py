@@ -2,8 +2,10 @@
 
 """Create simple game."""
 
+
 class GameObject:
     """Create superclass for to-come game objects."""
+
     class_name = ""
     desc = ""
     objects = {}
@@ -18,6 +20,7 @@ class GameObject:
 
 class Goblin(GameObject):
     """Define goblin subclass."""
+
     def __init__(self, name):
         self.class_name = "goblin"
         self.health = 3
@@ -40,7 +43,8 @@ class Goblin(GameObject):
     def desc(self, value):
         self._desc = value
 
-def hit(noun):
+
+def hit(noun: str) -> str:
     if noun in GameObject.objects:
         thing = GameObject.objects[noun]
         if type(thing) == Goblin:
@@ -59,7 +63,7 @@ def hit(noun):
 goblin = Goblin("Gobbly")
 
 
-def examine(noun):
+def examine(noun: str) -> str:
     """Return object's description."""
     if noun in GameObject.objects:
         return GameObject.objects[noun].get_desc()
@@ -67,7 +71,7 @@ def examine(noun):
         return f"There is no {noun} here."
 
 
-def get_input():
+def get_input() -> str:
     command = input(": ").split()
     verb_word = command[0]
 
@@ -84,7 +88,7 @@ def get_input():
         print(verb("nothing..."))
 
 
-def say(noun):
+def say(noun: str) -> str:
     if noun == "nothing...":
         return f"You said {noun}"
     else:
@@ -99,4 +103,3 @@ verb_dict = {
 
 while True:
     get_input()
-

@@ -8,16 +8,18 @@ This signals that they are private, and shouldn't be used by external code. Howe
 Its only actual effect is that from module_name import * won't import variables that start with a single underscore.
 """
 
+
 class Queue:
+
     def __init__(self, contents):
         self._hiddenlist = list(contents)
-    
+
     def push(self, value):
         self._hiddenlist.insert(0, value)
-    
+
     def pop(self):
         return self._hiddenlist.pop(-1)
-    
+
     def __repr__(self):
         return "Queue({})".format(self._hiddenlist)
 
@@ -38,7 +40,9 @@ Name mangled methods can still be accessed externally, but by a different name. 
 """
 
 class Spam:
+
     __egg = 7
+
     def print_egg(self):
         print(self.__egg)
 
@@ -51,4 +55,3 @@ s.print_egg()
 print(s._Spam__egg)
 # returns AttributeError
 print(s.__egg)
-
