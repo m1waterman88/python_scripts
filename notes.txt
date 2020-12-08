@@ -1,8 +1,0 @@
-Top 100 books
-Check items off list when read
-
-Web scrape with Beautiful Soup or Scrapy
-Write in to-do list style (coding-wise)
-    GUI packages?
-    Django/Flask, using a wrapper to create an app?
-        Django/Flask have their own web scrapers?

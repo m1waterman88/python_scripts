@@ -1,3 +1,5 @@
+"""OMG. This was my first Python script. No database. Just hardcode city."""
+
 # dictionary: key:value pairs
 
 month = str(input("Enter month: ")).casefold()
