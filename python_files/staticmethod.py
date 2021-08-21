@@ -12,21 +12,29 @@ Mark with decorator: @staticmethod.
 
 
 class Pizza:
+    """Make a pizza."""
 
-    def __init__(self, toppings):
+    def __init__(self, toppings: "list[str]"):
         self.toppings = toppings
 
     @staticmethod
-    def validate_topping(topping):
-        if topping == "pineapple":
-            raise ValueError("No pineapples!")
-        else:
-            return True
+    def validate_topping(topping: str) -> bool:
+        """Ensure no anchovies end up on a pie."""
+        if topping == "anchovies":
+            # raise ValueError("No anchovies!")
+            return False
+
+        return True
 
 
-ingredients = ["cheese", "onions", "spam"]
+ingredients = ["cheese", "onion", "spam"]
+# ingredients = ["cheese", "onion", "anchovies"]
+
 if all(Pizza.validate_topping(i) for i in ingredients):
     pizza = Pizza(ingredients)
-    print(pizza.toppings)
+
+    print("Toppings:")
+    for index, topping in enumerate(pizza.toppings):
+        print(f"{index + 1}: {topping}")
 else:
-    print("No!")
+    print("No anchovies!")

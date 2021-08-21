@@ -23,8 +23,9 @@ from getpass import getpass
 
 
 class Pizza:
+    """Make a pizza."""
 
-    def __init__(self, toppings):
+    def __init__(self, toppings: list) -> None:
         self.toppings = toppings
         self._pineapple_allowed = False
 
@@ -33,7 +34,8 @@ class Pizza:
         return self._pineapple_allowed
 
     @pineapple_allowed.setter
-    def pineapple_allowed(self, value):
+    def pineapple_allowed(self, value: bool) -> None:
+        """Apparently the owner has pineapple locked down."""
         if value:
             password = getpass("Enter the password: ")
             if password == "Sw0rdf1sh!":
@@ -43,6 +45,8 @@ class Pizza:
 
 
 pizza = Pizza(["cheese", "tomato"])
-print(pizza.pineapple_allowed)
-pizza.pineapple_allowed = True
-print(pizza.pineapple_allowed)
+# print(pizza.pineapple_allowed)
+# pizza.pineapple_allowed = True
+# print(pizza.pineapple_allowed)
+for index, topping in enumerate(pizza.toppings):
+    print(f"{index + 1}: {topping}")

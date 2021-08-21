@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-"""Debug default-value error."""
+"""This is a bunch of nonsense that let's me play with values."""
 
 
 class EvenStream(object):
@@ -25,31 +25,27 @@ class OddStream(object):
         return to_return
 
 
-def print_from_stream(n, stream=EvenStream()):
-    for _ in range(n):
+def print_from_stream(number, stream=EvenStream()):
+    for _ in range(number):
         print(stream.get_next())
+
     # Need to add this
     stream.current = 0
 
 
-"""
-queries = int(input())
-for _ in range(queries):
-    # stream_name, n = input().split()
-    stream_name, n = "odd 2", ("even 3"), ("odd 5")
-    n = int(n)
-    if stream_name == "even":
-        print_from_stream(n)
-    else:
-        print_from_stream(n, OddStream())
-"""
-
 queries = ["odd 2", "even 3", "odd 5"]
 # queries = ["even 2", "even 3", "even 5"]
+
 for i in range(len(queries)):
-    stream_name, n = queries[i].split()
-    n = int(n)
+    stream_name, number = queries[i].split()
+    number = int(number)
+
+    if ((stream_name == "even" and number % 2 != 0)
+            or (stream_name == "odd" and number % 2 == 0)):
+        print(f"Mismatched stream name and number: {stream_name} {number}")
+        continue
+
     if stream_name == "even":
-        print_from_stream(n)
+        print_from_stream(number)
     else:
-        print_from_stream(n, OddStream())
+        print_from_stream(number, OddStream())

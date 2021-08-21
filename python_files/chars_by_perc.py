@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-"""Return number of chars in given text."""
+"""Return number of characters in given text."""
 
 import string
 
@@ -29,39 +29,40 @@ Vs gur vzcyrzragngvba vf rnfl gb rkcynva, vg znl or n tbbq vqrn.
 Anzrfcnprf ner bar ubaxvat terng vqrn -- yrg'f qb zber bs gubfr!"""
 
 
-def count_char(text: str, char: str) -> int:
+def count_characters(text: str, character: str) -> int:
     """Count chars in text."""
     count = 0
-    for c in text.casefold():
-        if c == char:
+    for char in text.casefold():
+        if char == character:
             count += 1
     return count
 
 
-let_perc = 0
-num_perc = 0
-spec_perc = 0
+letter_percentage = 0
+number_percentage = 0
+special_percentage = 0
 
 
 for char in any_char:
-    perc = 100 * count_char(text, char) / len(text)
+    perc = 100 * count_characters(text, char) / len(text)
 
     if char in alpha:
-        let_perc += perc
+        letter_percentage += perc
         print(f"{char.upper()} - {round(perc, 2)}%")
     elif char in nums:
-        num_perc += perc
+        number_percentage += perc
     elif char in spec_chars:
-        spec_perc += perc
+        special_percentage += perc
 
-tot_perc = let_perc + num_perc + spec_perc
+total_percentage = letter_percentage + number_percentage + special_percentage
+
 # DON'T use parentheses with asserts
-assert tot_perc == 100, f"total percentage must equal 100\npercentage is {sum}"
+assert total_percentage == 100, f"total percentage must equal 100\npercentage is {sum}"
 
 print("",
-      f"letters: {round(let_perc, 2)}%",
-      f"numbers: {round(num_perc, 2)}%",
-      f"special chars: {round(spec_perc, 2)}%",
-      f"total: {tot_perc}%",
+      f"letters: {round(letter_percentage, 2)}%",
+      f"numbers: {round(number_percentage, 2)}%",
+      f"special chars: {round(special_percentage, 2)}%",
+      f"total: {total_percentage}%",
       "",
       sep="\n")

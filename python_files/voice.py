@@ -18,4 +18,3 @@ with speech_recognition.Microphone() as source:
 
 print("Google Speech Recognition thinks you said:")
 print(recognizer.recognize_google(audio))
-

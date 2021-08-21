@@ -1,4 +1,10 @@
-"""Convert subnets between binary and decimal."""
+#!/usr/bin/env python3
+
+"""
+Convert subnets between binary and decimal.
+
+Written while studying for the Network+ exam.
+"""
 
 type = input('\n' 'Welcome to the type converter!' '\n'
              'Enter the type to convert (int/bin): ').casefold()

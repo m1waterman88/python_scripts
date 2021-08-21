@@ -1,9 +1,15 @@
-def staircase(n: int) -> str:
-    for i in range(n):
-        spc = " " * (n - 1 - i)
-        pnd = "#" * (i + 1)
+#!/usr/bin/env python3
 
-        print(spc + pnd)
+"""Don't create so many stairs that you won't climb them."""
 
 
-staircase(6)
+def staircase(stair_count: int, symbol="#") -> str:
+    """Make a stair case out of a symbol."""
+    for stair in range(stair_count):
+        space = " " * (stair_count - 1 - stair)
+        stair_material = symbol * (stair + 1)
+
+        print(space + stair_material)
+
+
+staircase(8)

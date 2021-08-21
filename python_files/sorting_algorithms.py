@@ -38,7 +38,7 @@ print("","", "After bubble sort:", "-"*50, arr, sep="\n")
 '''
 
 
-def selection_sort(arr: list[int]) -> list[int]:
+def selection_sort(arr: "list[int]") -> "list[int]":
     """Sort arr with selection sort."""
     for i in range(len(arr)):
         minimum = i

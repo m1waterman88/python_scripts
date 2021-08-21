@@ -1,27 +1,27 @@
 #!/usr/bin/env python3
 
-"""Create simple game."""
+"""Create a simple game to get better acquainted with Python OOP."""
 
 
 class GameObject:
-    """Create superclass for to-come game objects."""
+    """Create superclass for forthcoming game objects."""
 
     class_name = ""
     desc = ""
     objects = {}
 
-    def __init__(self, name):
+    def __init__(self, name: str) -> None:
         self.name = name
         GameObject.objects[self.class_name] = self
 
-    def get_desc(self):
+    def get_desc(self) -> str:
         return f"{self.class_name}\n{self.desc}"
 
 
 class Goblin(GameObject):
     """Define goblin subclass."""
 
-    def __init__(self, name):
+    def __init__(self, name: str) -> None:
         self.class_name = "goblin"
         self.health = 3
         self._desc = "A foul creature"
@@ -31,12 +31,14 @@ class Goblin(GameObject):
     def desc(self):
         if self.health >= 3:
             return self._desc
-        elif self.health == 2:
+
+        if self.health == 2:
             health_line = "It has a wound on its knee."
         elif self.health == 1:
             health_line = "Its left arm has been cut off!"
         else:
             health_line = "It is dead."
+
         return f"{self._desc}\n{health_line}"
 
     @desc.setter
@@ -47,17 +49,20 @@ class Goblin(GameObject):
 def hit(noun: str) -> str:
     if noun in GameObject.objects:
         thing = GameObject.objects[noun]
+
         if type(thing) == Goblin:
             thing.health -= 1
+
             if thing.health < 0:
-                msg = f"It's already dead... I can't watch."
+                message = "It's already dead... I can't watch."
             elif thing.health == 0:
-                msg = f"You killed the {thing.class_name}!"
+                message = f"You killed the {thing.class_name}!"
             else:
-                msg = f"You hit the {thing.class_name}."
+                message = f"You hit the {thing.class_name}."
         else:
-            msg = f"There is no {noun} here."
-        return msg
+            message = f"There is no {noun} here."
+
+        return message
 
 
 goblin = Goblin("Gobbly")
@@ -67,8 +72,8 @@ def examine(noun: str) -> str:
     """Return object's description."""
     if noun in GameObject.objects:
         return GameObject.objects[noun].get_desc()
-    else:
-        return f"There is no {noun} here."
+
+    return f"There is no {noun} here."
 
 
 def get_input() -> str:

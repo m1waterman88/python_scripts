@@ -18,7 +18,7 @@ mode = mode(num_list)
 sum = sum(num_list)
 product = prod(num_list)
 
-print('\n')
+print()
 print(f'{num_list= }'.replace('=', ':'))
 print(f'{length= }'.replace('=', ':'))
 print(f'{min= }'.replace('=', ':'))
@@ -28,7 +28,7 @@ print(f'{median= }'.replace('=', ':'))
 print(f'{mode= }'.replace('=', ':'))
 print(f'{sum= }'.replace('=', ':'))
 print(f'{product= }'.replace('=', ':'))
-print('\n')
+print()
 
 
 '''
